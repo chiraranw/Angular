@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <app-re-usable-card [heading]="'Heading 1'"></app-re-usable-card>
+        </div>
+        <div class="col-md-3">
+            <app-re-usable-card heading='Heading 2'></app-re-usable-card>
+        </div>
+        <div class="col-md-3">
+            <app-twitter-like-button [totalLikes]="'29'" [likedByUser]="true"></app-twitter-like-button>
+        </div>
+        <div class="col-md-3">
+            <h4>{{totalCount}}</h4>
+            <child (notify)="onChildNotification($event)">
+            </child>
+        </div>
+    </div>
