@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <h5>*ngIf</h5>
+            <div class="" *ngIf="courses.length>0;then coursesList else noCourses"></div>
+            <ng-template #coursesList>
+                There are Courses in the list...
+            </ng-template>
+            <ng-template #noCourses>
+                No courses in the list
+            </ng-template>
+        </div>
+        <div class="col-md-3">
+            <h5>*ngSwitch</h5>
+            <div [ngSwitch]="total">
+                <p *ngSwitchCase="1">Display this when total is 1</p>
+                <p *ngSwitchCase="2">Display this when total is 2</p>
+                <p *ngSwitchCase="3">Display this when total is 3</p>
+                <p *ngSwitchDefault>Default Case</p>
+
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h5>*ngFor</h5>
+            <ul *ngFor="let course of courses">
+                <li>{{course}}</li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <h5>*ngFor - trackBy</h5>
+            <button (click)="loadCattle()">Load cattle</button>
+
+            <ul *ngFor="let c of cattle;trackBy:trackById">
+                <li>{{c.name}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <zippy title="Shpping Details">
+        Shippign Details Content
+    </zippy>
+</div>
