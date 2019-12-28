@@ -1,0 +1,20 @@
+<div class="">
+    <h5>Asynchronous Validators</h5>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <form [formGroup]="asyncValForm">
+                    <div class="form-group">
+                        <label for="firstName"></label>
+                        <input formControlName="firstName" type="text" class="form-control" name="firstName" id="firstName">
+                        <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="alert alert-danger">
+                            <div *ngIf="firstName.errors.required">Name is required!</div>
+                            <div *ngIf="firstName.errors.uniqueName">Name taken!</div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</div>
